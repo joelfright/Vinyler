@@ -1,6 +1,5 @@
 package com.sparta.joel.vinyler.services;
 
-import com.sparta.joel.vinyler.entities.UserEntity;
 import com.sparta.joel.vinyler.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +12,5 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public void createUser(UserEntity userEntity){
-        userRepository.save(userEntity);
-    }
 
 }
