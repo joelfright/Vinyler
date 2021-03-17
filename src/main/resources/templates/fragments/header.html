@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Header</title>
@@ -17,9 +17,16 @@
 
             <ul class="navbar nav">
                 <div sec:authorize="hasRole('ADMIN')">
+                    <li class="nav-item">
+                        <form th:action="@{/admin-add}" method="get">
+                            <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Add Record">
+                        </form>
+                    </li>
+                </div>
+                <div sec:authorize="hasRole('ADMIN')">
                     <li class="nav-item px-2">
-                        <form th:action="@{/admin}" method="get">
-                            <input type="submit" class="btn btn-outline-warning my-2 my-sm-0" value="Admin">
+                        <form th:action="@{/admin-delete}" method="get">
+                            <input type="submit" class="btn btn-outline-warning my-2 my-sm-0" value="Delete Record">
                         </form>
                     </li>
                 </div>

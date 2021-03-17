@@ -1,6 +1,6 @@
-package com.sparta.joel.vinyler.entities;
+package com.sparta.joel.vinyler.users.entities;
 
-import com.sparta.joel.vinyler.services.PasswordCreator;
+import com.sparta.joel.vinyler.users.services.PasswordCreator;
 
 import javax.persistence.*;
 import java.util.Objects;

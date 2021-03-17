@@ -1,4 +1,4 @@
-package com.sparta.joel.vinyler.security;
+package com.sparta.joel.vinyler.users.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -17,12 +17,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final DataSource dataSource;
 
-    @Autowired
-    private AccessDeniedComponent accessDeniedComponent;
+    private final com.sparta.joel.vinyler.users.security.AccessDeniedComponent accessDeniedComponent;
 
     @Autowired
-    public WebSecurityConfig(DataSource dataSource) {
+    public WebSecurityConfig(DataSource dataSource, com.sparta.joel.vinyler.users.security.AccessDeniedComponent accessDeniedComponent) {
         this.dataSource = dataSource;
+        this.accessDeniedComponent = accessDeniedComponent;
     }
 
     @Autowired

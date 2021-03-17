@@ -1,4 +1,4 @@
-package com.sparta.joel.vinyler.services;
+package com.sparta.joel.vinyler.users.services;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

@@ -1,4 +1,4 @@
-package com.sparta.joel.vinyler.controllers;
+package com.sparta.joel.vinyler.general.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,9 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DefaultController {
 
-    @GetMapping("/admin")
+    @GetMapping("/admin-add")
     public String admin() {
-        return "admin/add-user";
+        return "/admin/add-record";
+    }
+
+    @GetMapping("/admin-delete")
+    public String adminDelete() {
+        return "/admin/delete-record";
     }
 
     @GetMapping("/index")

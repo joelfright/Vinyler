@@ -1,6 +1,6 @@
-package com.sparta.joel.vinyler.services;
+package com.sparta.joel.vinyler.users.services;
 
-import com.sparta.joel.vinyler.repositories.UserRepository;
+import com.sparta.joel.vinyler.users.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,6 +1,6 @@
-package com.sparta.joel.vinyler.controllers;
+package com.sparta.joel.vinyler.users.controllers;
 
-import com.sparta.joel.vinyler.services.UserService;
+import com.sparta.joel.vinyler.users.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 
