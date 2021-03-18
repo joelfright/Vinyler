@@ -1,0 +1,19 @@
+html,
+body {
+    height: 100%;
+    background-color: #f5f5f5;
+}
+
+.form-select-sm {
+    width: 200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    display: inline-flex;
+    padding-right: 15px;
+}
+
+
+
+.form-select-sm label {
+    margin-bottom: 5px;
+}

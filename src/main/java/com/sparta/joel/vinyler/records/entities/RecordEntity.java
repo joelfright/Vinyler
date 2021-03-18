@@ -2,7 +2,6 @@ package com.sparta.joel.vinyler.records.entities;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity

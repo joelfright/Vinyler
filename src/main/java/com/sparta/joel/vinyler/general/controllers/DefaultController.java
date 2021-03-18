@@ -16,11 +16,6 @@ public class DefaultController {
         return "/admin/delete-record";
     }
 
-    @GetMapping("/index")
-    public String index() {
-        return "/index";
-    }
-
     @GetMapping("/login")
     public String login(){
         return "login";

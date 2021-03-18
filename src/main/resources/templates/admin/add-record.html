@@ -8,7 +8,7 @@
 <body>
 <div th:insert="fragments/header.html"></div>
 <div class="add-record">
-<form class="form-add-record" th:action="@{/admin/added}" method="post">
+<form class="form-add-record" th:action="@{/admin-added}" method="post">
 
     <h1 class="h3 mb-3 fw-normal">Add Record</h1>
     <input type="text" id="recordName" name="recordName" class="form-control" placeholder="Record Name" required
@@ -16,9 +16,16 @@
     <input type="text" id="artistName" name="artistName" class="form-control" placeholder="Artist Name" required>
     <select id="genre" name="genre" class="form-control" required>
         <option value="" disabled selected>Genre</option>
+        <option value="Hip Hop">Hip Hop</option>
+        <option value="Rap">Rap</option>
+        <option value="Techno">Techno</option>
         <option value="RnB">RnB</option>
-        <option value="Reggae">Reggae</option>
-        <option value="Hip Hop">HipHop</option>
+        <option value="Punk">Punk</option>
+        <option value="Alt Rock">Alt Rock</option>
+        <option value="House">House</option>
+        <option value="Country">Country</option>
+        <option value="Indie">Indie</option>
+        <option value="Electro">Electro</option>
         <option value="Other">Other</option>
     </select>
     <input type="number" id="numOfPlays" name="numOfPlays" class="form-control" placeholder="Number of Plays" required>
