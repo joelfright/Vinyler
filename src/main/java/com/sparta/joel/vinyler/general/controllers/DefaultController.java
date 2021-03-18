@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class DefaultController {
 
-    @GetMapping("/admin-add")
+    @GetMapping("/admin/add/add-record")
     public String admin() {
-        return "/admin/add-record";
+        return "/admin/add/add-record";
     }
 
-    @GetMapping("/admin-delete")
+    @GetMapping("/admin/delete/delete-record")
     public String adminDelete() {
-        return "/admin/delete-record";
+        return "/admin/delete/delete-record";
     }
 
     @GetMapping("/login")

@@ -19,10 +19,20 @@ public class RecordController {
         this.recordService = recordService;
     }
 
-    @PostMapping("/admin-added")
-    public String addRecord(RecordEntity recordEntity){
+    @PostMapping("/add/add-record")
+    public String addRecord(@RequestParam(value = "message", required = false) String message, RecordEntity recordEntity){
         recordService.addNewRecord(recordEntity);
-        return "index";
+        return "admin/add/add-record-success";
+    }
+
+    @PostMapping("/delete/delete-record")
+    public String deleteRecord(@RequestParam(value = "recordIdDelete") Integer id){
+        if(recordService.idExists(id)){
+            recordService.deleteRecord(id);
+            return "admin/delete/delete-record-success";
+        }else{
+            return "admin/delete/delete-record-failure";
+        }
     }
 
     @GetMapping("/index")

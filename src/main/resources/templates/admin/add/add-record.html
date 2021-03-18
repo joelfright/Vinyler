@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Add Record</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/addrecord.css}"/>
+</head>
+<body>
+<div th:insert="fragments/header.html"></div>
+<div class="add-record">
+    <form class="form-add-record" th:action="@{/add/add-record}" method="post">
+
+        <h1 class="h3 mb-3 fw-normal">Add Record</h1>
+        <input type="text" id="recordName" name="recordName" class="form-control" placeholder="Record Name" required
+               autofocus>
+        <input type="text" id="artistName" name="artistName" class="form-control" placeholder="Artist Name" required>
+        <select id="genre" name="genre" class="form-control" required>
+            <option value="" disabled selected>Genre</option>
+            <option value="Hip Hop">Hip Hop</option>
+            <option value="Rap">Rap</option>
+            <option value="Techno">Techno</option>
+            <option value="RnB">RnB</option>
+            <option value="Punk">Punk</option>
+            <option value="Alt Rock">Alt Rock</option>
+            <option value="House">House</option>
+            <option value="Country">Country</option>
+            <option value="Indie">Indie</option>
+            <option value="Electro">Electro</option>
+            <option value="Other">Other</option>
+        </select>
+        <input type="number" id="numOfPlays" name="numOfPlays" class="form-control" placeholder="Number of Plays"
+               required>
+
+        <label>Last Played</label>
+        <input type="date" id="lastPlayed" name="lastPlayed" class="form-control" placeholder="Last Played" required>
+
+        <input type="submit" class="w-100 btn btn-lg btn-primary" value="Submit">
+    </form>
+</div>
+</body>
+</html>

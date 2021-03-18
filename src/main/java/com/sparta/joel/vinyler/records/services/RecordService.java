@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Optional;
 
 @Service
 public class RecordService {
@@ -20,9 +21,21 @@ public class RecordService {
         return recordRepository.findAll();
     }
 
-    public RecordEntity addNewRecord(RecordEntity recordEntity){
+    public void addNewRecord(RecordEntity recordEntity){
         recordRepository.save(recordEntity);
-        return recordEntity;
+    }
+
+    public void deleteRecord(Integer id){
+        recordRepository.deleteById(id);
+    }
+
+    public boolean idExists(Integer id){
+        Optional optional = recordRepository.findById(id);
+        if(optional.isPresent()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public int getMedian(){

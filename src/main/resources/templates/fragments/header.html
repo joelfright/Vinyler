@@ -18,14 +18,14 @@
             <ul class="navbar nav">
                 <div sec:authorize="hasRole('ADMIN')">
                     <li class="nav-item">
-                        <form th:action="@{/admin-add}" method="get">
+                        <form th:action="@{/admin/add/add-record}" method="get">
                             <input type="submit" class="btn btn-outline-success my-2 my-sm-0" value="Add Record">
                         </form>
                     </li>
                 </div>
                 <div sec:authorize="hasRole('ADMIN')">
                     <li class="nav-item px-2">
-                        <form th:action="@{/admin-delete}" method="get">
+                        <form th:action="@{/admin/delete/delete-record}" method="get">
                             <input type="submit" class="btn btn-outline-warning my-2 my-sm-0" value="Delete Record">
                         </form>
                     </li>
