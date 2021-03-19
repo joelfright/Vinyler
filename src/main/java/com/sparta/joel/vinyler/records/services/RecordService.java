@@ -17,41 +17,48 @@ public class RecordService {
         this.recordRepository = recordRepository;
     }
 
-    public Iterable<RecordEntity> getAllRecords(){
+    public Iterable<RecordEntity> getAllRecords() {
         return recordRepository.findAll();
     }
 
-    public void addNewRecord(RecordEntity recordEntity){
+    public void addNewRecord(RecordEntity recordEntity) {
         recordRepository.save(recordEntity);
     }
 
-    public void deleteRecord(Integer id){
+    public void deleteRecord(Integer id) {
         recordRepository.deleteById(id);
     }
 
-    public boolean idExists(Integer id){
+    public boolean idExists(Integer id) {
         Optional optional = recordRepository.findById(id);
-        if(optional.isPresent()){
-            return true;
+        return optional.isPresent();
+    }
+
+    public int getMedian(String filter) {
+        Iterable<RecordEntity> recordEntitiesList;
+        if(filter == null) {
+             recordEntitiesList = recordRepository.findAll();
         }else{
-            return false;
+            recordEntitiesList = recordRepository.findByGenre(filter);
+        }
+        ArrayList<Integer> numOfPlays = new ArrayList<>();
+        recordEntitiesList.forEach(element -> numOfPlays.add(element.getNumOfPlays()));
+        if(numOfPlays.isEmpty()){
+            return 0;
+        }else if(numOfPlays.size() == 1){
+            return numOfPlays.get(0);
+        }else{
+            Collections.sort(numOfPlays);
+            return numOfPlays.get(numOfPlays.size() / 2 + (numOfPlays.size() % 2));
         }
     }
 
-    public int getMedian(){
-        Iterable<RecordEntity> recordEntitiesList = recordRepository.findAll();
-        ArrayList<Integer> numOfPlays = new ArrayList<>();
-        recordEntitiesList.forEach(element -> numOfPlays.add(element.getNumOfPlays()));
-        Collections.sort(numOfPlays);
-        return numOfPlays.get(numOfPlays.size() / 2 + (numOfPlays.size() % 2));
+    public RecordEntity getRecommendation() {
+        return recordRepository.findRecommendation(getMedian(null));
     }
 
-    public RecordEntity getRecommendation(){
-        return recordRepository.findRecommendation(getMedian());
-    }
-
-    public RecordEntity getFilteredRecommendation(String filter){
-        return recordRepository.findRecommendation(getMedian(),filter);
+    public RecordEntity getFilteredRecommendation(String filter) {
+        return recordRepository.findRecommendation(getMedian(filter), filter);
     }
 
 }

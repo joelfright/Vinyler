@@ -1,6 +1,14 @@
 <!DOCTYPE HTML>
-<html lang="en">
-<body>
-
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<div th:fra gment="footer">
+    <div class="text-center p-2" style="background-color: rgba(33,37,41, 0.8);">
+        <div style="color:white">Currently Logged in as: [[${#httpServletRequest.remoteUser}]]</div>
+    </div>
+</div>
 </body>
 </html>

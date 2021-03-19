@@ -16,8 +16,6 @@ public class AccessDeniedComponent implements AccessDeniedHandler {
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException ex) throws IOException {
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-
         response.sendRedirect(request.getContextPath() + "/access-denied");
 
     }
